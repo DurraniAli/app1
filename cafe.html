@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Café</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav h1 {
+      margin: 0;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .card {
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 15px;
+      padding: 15px;
+      background-color: white;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .cart-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Nom de la Société</h1>
+    
+
+  </nav>
+
+  <div class="menu-container">
+    <div class="card">
+      <img src="cafe1.jpg" alt="Café 1">
+      <h2>Café Noir</h2>
+      <p>Description du café noir.</p>
+      <p>Prix : $2.50</p>
+      <button onclick="addToCart('Café Noir', 2.5)">Ajouter au panier</button>
+    </div>
+
+    <div class="card">
+      <img src="cafe2.jpg" alt="Café 2">
+      <h2>Café Latte</h2>
+      <p>Description du café latte.</p>
+      <p>Prix : $3.00</p>
+      <button onclick="addToCart('Café Latte', 3.0)">Ajouter au panier</button>
+    </div>
+    <div class="card">
+        <img src="cafe2.jpg" alt="Café 2">
+        <h2>Café Latte</h2>
+        <p>Description du café latte.</p>
+        <p>Prix : $3.00</p>
+        <button onclick="addToCart('Café Latte', 3.0)">Ajouter au panier</button>
+      </div>
+      <div class="card">
+        <img src="cafe2.jpg" alt="Café 2">
+        <h2>Café Latte</h2>
+        <p>Description du café latte.</p>
+        <p>Prix : $3.00</p>
+        <button onclick="addToCart('Café Latte', 3.0)">Ajouter au panier</button>
+      </div>
+      <div class="card">
+        <img src="cafe2.jpg" alt="Café 2">
+        <h2>Café Latte</h2>
+        <p>Description du café latte.</p>
+        <p>Prix : $3.00</p>
+        <button onclick="addToCart('Café Latte', 3.0)">Ajouter au panier</button>
+      </div>
+      <div class="card">
+        <img src="cafe2.jpg" alt="Café 2">
+        <h2>Café Latte</h2>
+        <p>Description du café latte.</p>
+        <p>Prix : $3.00</p>
+        <button onclick="addToCart('Café Latte', 3.0)">Ajouter au panier</button>
+      </div>
+
+    
+
+  </div>
+
+  <div class="cart-container" id="cart">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAp1JREFUWEftl02ITlEYx38jLCxYKAkblDE+NiyUhYisFDONEBsUUSymbHyEfCyklAWxYDHNMCmysBgzoSQSNhJKmsVopoaNjXzrr+eO03XvPeee907zLuapt6Z5z/M/v/k/z3nOmQbqLBrqjIcxIF9F0g4dcxK+APeAZ8Bvn1BV36eBsjbuBLZWtaFPJwRIGtuADp9YFd8XlWwpsM42eQosC9hwJaCP4oF9AtL+LSk6ZdOBD8A4Wy7AFx519eBRW3MccHsyCMx37G8AraZ0Bdg52kCy/75BfAWmAZ8LoEbcIe39ClhgEG3AudEG2gNcMIh3wDxnLv10eszXI1o73rfI10PKnwQMAJNNbC3QYz/HAm0EFprGI0cv+C47D+wzgdvAhhqAJgBDwBTTWOWOhxCHlDcXULkUv4CZwGCG/SFNvQm4brl9wGxXJxRIOb3Aaks+BRyOBOoGVHbFIeB0LFAzcNOSPwEanD9SUD6HZgD98LdV5PQs689hmTIOaWJrcgtEscWxPhH0AWmKJ9P7jnM1RQEp6SCgcikeAitSDhXdZfrj5Y5cUrQAt9JlL+OQcqdaMyfzZJENzox2+u9Xa5zj/dHAvtcKpPx2e47o54vA3hAa4Bqw2daeBQ5k5ZV1SBp6hjwxMb0qzwQC6UQlzjYBb6oCks5zYEkgSHrZY2B5Xm6MQ9KS9SpBTGSdzmGdWCAJSLixJNFroKsopxagkixhy2sBugRsB94D+4G7OVvqmtDlPAe4CuweCYcEoidtEm+B+Tkb6TS5pd1hYJnLYx3SxXrCUdSAm5gD9A3QkyOJI8DJqk/ZYvsPJJkrlwtKodLuMgBdxhoXL6sGkp6g1tuFq94oCpVYbyg97nJhJBBbsrAjE7FqDMhnWt059AfLz3gl1FsBDAAAAABJRU5ErkJggg==" class="cart-logo" onclick="showOrderDetails()">
+    
+    Panier: 0 articles
+  </div>
+  
+
+  
+  <script>
+    let cartItems = 0;
+    let totalPrice = 0;
+
+    function addToCart(itemName, price) {
+      cartItems++;
+      totalPrice += price;
+
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartElement = document.getElementById('cart');
+      cartElement.innerHTML = `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAp1JREFUWEftl02ITlEYx38jLCxYKAkblDE+NiyUhYisFDONEBsUUSymbHyEfCyklAWxYDHNMCmysBgzoSQSNhJKmsVopoaNjXzrr+eO03XvPeee907zLuapt6Z5z/M/v/k/z3nOmQbqLBrqjIcxIF9F0g4dcxK+APeAZ8Bvn1BV36eBsjbuBLZWtaFPJwRIGtuADp9YFd8XlWwpsM42eQosC9hwJaCP4oF9AtL+LSk6ZdOBD8A4Wy7AFx519eBRW3MccHsyCMx37G8AraZ0Bdg52kCy/75BfAWmAZ8LoEbcIe39ClhgEG3AudEG2gNcMIh3wDxnLv10eszXI1o73rfI10PKnwQMAJNNbC3QYz/HAm0EFprGI0cv+C47D+wzgdvAhhqAJgBDwBTTWOWOhxCHlDcXULkUv4CZwGCG/SFNvQm4brl9wGxXJxRIOb3Aaks+BRyOBOoGVHbFIeB0LFAzcNOSPwEanD9SUD6HZgD98LdV5PQs689hmTIOaWJrcgtEscWxPhH0AWmKJ9P7jnM1RQEp6SCgcikeAitSDhXdZfrj5Y5cUrQAt9JlL+OQcqdaMyfzZJENzox2+u9Xa5zj/dHAvtcKpPx2e47o54vA3hAa4Bqw2daeBQ5k5ZV1SBp6hjwxMb0qzwQC6UQlzjYBb6oCks5zYEkgSHrZY2B5Xm6MQ9KS9SpBTGSdzmGdWCAJSLixJNFroKsopxagkixhy2sBugRsB94D+4G7OVvqmtDlPAe4CuweCYcEoidtEm+B+Tkb6TS5pd1hYJnLYx3SxXrCUdSAm5gD9A3QkyOJI8DJqk/ZYvsPJJkrlwtKodLuMgBdxhoXL6sGkp6g1tuFq94oCpVYbyg97nJhJBBbsrAjE7FqDMhnWt059AfLz3gl1FsBDAAAAABJRU5ErkJggg==" class="cart-logo" onclick="showOrderDetails()">`;
+    }
+
+    function showOrderDetails() {
+      alert(`Vous avez ${cartItems} articles dans votre panier.\nTotal à payer : $${totalPrice.toFixed(2)}`);
+    }
+  </script>
+
+</body>
+</html>
